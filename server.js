@@ -49,6 +49,7 @@ app.use(flashMW.setFlash);
 
 //configuring Routes
 app.use('/', routes);
+app.use('/static', express.static(path.join(__dirname, 'assests')));
 
 // connecting to mongodb and listening to the server.
 MDBConnection().then(() => {
