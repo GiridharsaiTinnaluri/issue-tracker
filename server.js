@@ -42,7 +42,10 @@ app.use(session({
         maxAge: (1000 * 60 * 100)
     }
 }));
+console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
 console.log(`${process.env.LOCAL_HOST}/js/projectDetails.js`);
+console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
 // flash midleware used to set flash messages to cookies 
 app.use(flash());
 app.use(flashMW.setFlash);
