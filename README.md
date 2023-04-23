@@ -1,4 +1,4 @@
-# issue-tracker
+# Issue-tracker
 
 Issue tracker node project developed using node, express, ejs and MongoDB. The project is a web application that allows users to create, manage and track issues or bugs for different projects. The application uses express as the web framework, ejs as the templating engine, MongoDB as the database and mongoose as the object data modeling library. The application also uses tailwind CSS for the user interface.
 
