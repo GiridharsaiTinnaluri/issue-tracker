@@ -17,7 +17,7 @@ const app = express();
 const PORT = 5000;
 
 // Giving access to the public assets folder
-app.use(express.static('./assests'));
+app.use(express.static(path.join(__dirname, 'assests')));
 app.use(expressLayouts);
 //extract styles and scripts from sub pages
 app.set('layout extractStyles', true);
