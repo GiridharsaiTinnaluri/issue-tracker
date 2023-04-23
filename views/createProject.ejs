@@ -1,0 +1,61 @@
+<div 
+    id="wrapper"
+    class="flex justify-center
+            sm:container xl:w-1/2 w-full
+            mx-auto p-4
+        "
+>
+
+    <form 
+        method="POST"
+        action="/App/v1/projects/createProject"
+        class="w-full space-y-4"
+    >
+        <diV
+            class="flex flex-col text-gray-500 space-y-1 space-x-2 text-xs"
+        >
+            <label for="nameInput">Name :</label>
+            <input 
+                id="nameInput"
+                name="projectName"
+                type="text" 
+                placeholder="Project Name"
+                class="border-2 border-indigo-500/50 rounded-sm p-1 outline-none"
+            />
+        </diV>
+
+        <diV
+            class="flex flex-col text-gray-500 space-y-1 space-x-2 text-xs w-full"
+        >
+            <label for="authorInput">Author :</label>
+            <input 
+                id="authorInput"
+                name="projectAuthor"
+                type="text" 
+                placeholder="Author"
+                class="border-2 border-indigo-500/50 rounded-sm p-1 outline-none"
+            />
+        </diV>
+
+        <diV
+            class="flex flex-col text-gray-500 space-y-1 space-x-2 text-xs w-full"
+        >
+            <label for="descInput">Description :</label>
+            <textarea 
+                id="descInput"
+                name="projectDesc"
+                placeholder="Description"
+                rows="5"
+                class="border-2 border-indigo-500/50 rounded-sm p-1 outline-none"
+            ></textarea>
+        </diV>
+
+        <button
+            type="submit"
+            class="w-full bg-black py-1 rounded-sm
+                            text-xs"
+        >
+            Create Project
+        </button>
+    </form>
+</div>

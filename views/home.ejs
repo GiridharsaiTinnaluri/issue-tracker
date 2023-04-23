@@ -1,0 +1,140 @@
+
+
+    <div 
+        id="wrapper"
+        class=" sm:container xl:w-1/2 w-full
+                grid gap-4 grid-rows-[1fr_2fr] sm:grid-cols-[1fr_2fr] 
+                sm:grid-rows-1 mx-auto p-4 overflow-auto 
+            "
+    >
+        
+        <!-- filter div - card -->
+        <!-- class="border-2 border-green-500" -->
+        <section
+        >
+            <!-- <form 
+                class="bg-white rounded-xl shadow-lg shadow-inner space-y-4
+                        w-full p-4 text-xs"
+                method="get"
+                action="/"
+            > -->
+                <!-- Author input -->
+                <!-- <diV
+                    class="text-gray-500 space-y-1 text-xs"
+                >
+                    <label for="authorInput">Author :</label>
+                    <input 
+                        id="authorInput"
+                        type="text" 
+                        placeholder="author"
+                        class="ring ring-2 rounded-sm pl-1 outline-none"
+                    />
+                </diV> -->
+
+                <!-- project Input -->
+                <!-- <diV
+                    class="text-gray-500 space-y-1 text-xs"
+                >
+                    <label for="projectInput">Project :</label>
+                    <input 
+                        id="projectInput"
+                        type="text" 
+                        placeholder="author"
+                        class="ring ring-2 rounded-sm pl-1 outline-none"
+                    />
+                </diV> -->
+
+                <!-- Filter button -->
+                <!-- <button 
+                    type="submit" 
+                    class="w-full bg-black py-1 rounded-lg 
+                            text-xs"
+                > 
+                    Filter 
+                </button>
+            </form> -->
+        </section>
+
+        <!-- Display Main Content -->
+        <section class="space-y-4  overflow-auto">
+            <!-- Search bar -->
+            <form 
+                method="POST"
+                action="/App/v1/projects/search"
+                class="flex space-x-2"
+            >
+                <input
+                    type="search"
+                    name="searchProject"
+                    class="border-2 border-indigo-500/50 rounded-sm w-3/4 pl-1 
+                            outline-none text-slate-600"
+                    placeholder="search.."
+                />
+
+                <button type="submit"
+                    class="bg-blue-900 rounded-sm w-1/4 text-xs"
+                >
+                    Search
+                </button>
+            </form>
+
+            <!-- project title and create button -->
+            <div 
+                class="flex justify-between"
+            >
+                <p 
+                    class="text-black font-bold text-sm
+                        underline self-end"
+                >
+                    Projects
+                </p>
+
+                <a 
+                    href="/App/v1/projects/createProject"
+                    class="block px-2 py-1 bg-green-500 text-white text-xs 
+                            cursor-pointer"
+                >+ create</a>
+            </div>
+
+            <!-- Display project lists -->
+            <div 
+                class="flex flex-col space-y-1 h-[70%] sm:h-[80%]
+                overflow-auto"
+            >
+                <% for(item of projects) { %>
+                    <a 
+                        id="projectDetailsCard"
+                        class="p-4 cursor-pointer hover:shadow-xl shadow-inner space-y-1 bg-white"
+                        href="/App/v1/projects/projectDetails/<%= item.id %>"
+                    >
+                        <!-- <p class="inline-block text-slate-300">01</p> -->
+                        <p 
+                            id="title"
+                            class="font-bold text-slate-900 text-sm uppercase"
+                        >
+                            <%= item.name %>
+                        </p>
+    
+                        <p 
+                            id="author"
+                            class="font-bold text-gray-600 text-xs capitalize"
+                        >
+                            <%= item.author %>
+                        </p>
+    
+                        <p 
+                            id="Description"
+                            class="text-slate-500 text-xs"
+                        >
+                            <%= item.descritption %>
+                        </p>
+
+                        <p class="text-slate-400 text-[0.5rem]">
+                            <%= item.createdAt.toLocaleString() %>
+                        </p>
+                    </a>
+                <% } %>
+            </div>
+        </section>
+    </div>
+
